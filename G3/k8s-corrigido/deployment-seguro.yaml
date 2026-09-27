@@ -1,0 +1,82 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webgoat
+  namespace: webgoat
+  labels:
+    app: webgoat
+    app.kubernetes.io/name: webgoat
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webgoat
+  template:
+    metadata:
+      labels:
+        app: webgoat
+        app.kubernetes.io/name: webgoat
+    spec:
+      automountServiceAccountToken: false
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        runAsGroup: 10001
+        fsGroup: 10001
+        seccompProfile:
+          type: RuntimeDefault
+      containers:
+        - name: webgoat
+          image: webgoat/webgoat:2026.4
+          ports:
+            - containerPort: 8080
+          securityContext:
+            runAsNonRoot: true
+            runAsUser: 10001
+            runAsGroup: 10001
+            privileged: false
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop: ["ALL"]
+          resources:
+            requests:
+              cpu: 250m
+              memory: 512Mi
+            limits:
+              cpu: "1"
+              memory: 1Gi
+          livenessProbe:
+            httpGet:
+              path: /WebGoat/actuator/health
+              port: 8080
+          readinessProbe:
+            httpGet:
+              path: /WebGoat/actuator/health
+              port: 8080
+          volumeMounts:
+            - name: tmp
+              mountPath: /tmp
+            - name: db-secret
+              mountPath: /etc/secrets
+              readOnly: true
+      volumes:
+        - name: tmp
+          emptyDir: {}
+        - name: db-secret
+          secret:
+            secretName: webgoat-db
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: webgoat
+  namespace: webgoat
+spec:
+  podSelector:
+    matchLabels:
+      app: webgoat
+  policyTypes: ["Ingress", "Egress"]
+  ingress:
+    - ports:
+        - port: 8080

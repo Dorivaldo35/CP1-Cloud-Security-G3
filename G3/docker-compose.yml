@@ -1,0 +1,39 @@
+services:
+  webgoat:
+    image: webgoat/webgoat
+    ports:
+      - "127.0.0.1:8080:8080"
+
+  syft:
+    image: anchore/syft:latest
+    profiles: ["tools"]
+    volumes: ["./relatorios:/out"]
+    command: ["registry:webgoat/webgoat", "-o", "table", "-o", "cyclonedx-json=/out/sbom.json"]
+
+  grype:
+    image: anchore/grype:latest
+    profiles: ["tools"]
+    volumes: ["./relatorios:/out"]
+    command: ["sbom:/out/sbom.json", "-o", "table", "-o", "json=/out/grype.json"]
+
+  kubescape:
+    image: quay.io/kubescape/kubescape-cli:latest
+    profiles: ["tools"]
+    working_dir: /work
+    volumes: [".:/work"]
+    entrypoint: ["kubescape"]
+    command: ["scan", "k8s/", "--format", "json", "--output", "relatorios/kubescape.json"]
+
+  spotbugs:
+    image: maven:3.9-eclipse-temurin-17
+    profiles: ["tools"]
+    working_dir: /app
+    volumes: ["./app:/app", "./relatorios:/out"]
+    command: ["sh", "-c", "mvn -B compile spotbugs:spotbugs && cp target/spotbugsXml.xml /out/spotbugs.xml"]
+
+  wapiti:
+    image: python:3.12-slim
+    profiles: ["tools"]
+    depends_on: [webgoat]
+    volumes: ["./relatorios:/out"]
+    command: ["sh", "-c", "pip install -q wapiti3 && wapiti -u http://webgoat:8080/WebGoat/ --scope folder --max-scan-time 300 -f html -o /out/wapiti"]

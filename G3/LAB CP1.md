@@ -46,8 +46,8 @@ Neste lab você vai usar 3 ferramentas para encontrar esses problemas
 
 ### Passo 1 - Baixar o repositório (1 min)
 ```
-git clone https://github.com/Lamataa/test.git
-cd test
+git clone https://github.com/USUARIO/REPOSITORIO.git
+cd REPOSITORIO
 ```
 📁 **O que tem aqui:**
 | Arquivo / pasta | Para que serve |
@@ -74,10 +74,12 @@ tem dentro dela.
 👉 **Procure a linha `xstream 1.4.5`.** Guarde esse nome.
 
 ### Passo 3 - Procurar vulnerabilidades com o Grype (3 min)
+> ⚠️ Rode o **Passo 2 antes**: o Grype lê o SBOM (`relatorios/sbom.json`) gerado pelo Syft.
+
 ```
 docker compose run --rm grype
 ```
-**O que acontece:** o Grype pega a lista de ingredientes e compara cada um com
+**O que acontece:** o Grype lê o SBOM gerado no Passo 2 (sem baixar a imagem de novo) e compara cada um com
 bancos públicos de vulnerabilidades.
 
 **Resultado esperado:** um resumo no topo (`by severity: X critical, Y high...`)
@@ -170,5 +172,5 @@ Entregue as respostas com o **print** do seu terminal:
 | Problema | Solução |
 |---|---|
 | `Cannot connect to the Docker daemon` | Abra o Docker Desktop e espere ficar pronto |
-| `no configuration file provided` | Você não está na pasta `test`: rode `cd test` |
+| `no configuration file provided` | Você não está na pasta `test`: rode `cd REPOSITORIO` |
 | Download muito lento | Acompanhe pelo **vídeo backup** (link no README) |

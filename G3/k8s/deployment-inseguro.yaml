@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webgoat
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webgoat
+  template:
+    metadata:
+      labels:
+        app: webgoat
+    spec:
+      hostNetwork: true
+      containers:
+        - name: webgoat
+          image: webgoat/webgoat:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: DB_PASSWORD
+              value: "SenhaSuperSecreta123"
+          securityContext:
+            privileged: true
+            runAsUser: 0
+          volumeMounts:
+            - name: host-root
+              mountPath: /host
+      volumes:
+        - name: host-root
+          hostPath:
+            path: /
