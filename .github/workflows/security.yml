@@ -12,6 +12,10 @@ on:
 env:
   MODO: vulneravel
 
+defaults:
+  run:
+    working-directory: G3
+
 jobs:
   grype:
     name: SCA - Syft + Grype
