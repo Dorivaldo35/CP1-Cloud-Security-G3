@@ -1,0 +1,13 @@
+# Excecoes aceitas (aceite de risco) - Grupo 3
+# O WebGoat e uma aplicacao PROPOSITALMENTE vulneravel, mantida pela OWASP.
+# Nao controlamos as dependencias dela. Em um projeto real, a correcao seria:
+#   - xstream 1.4.5             -> atualizar para >= 1.4.21 (CVE-2021-39144 e outras)
+#   - tomcat-embed-core 11.0.24 -> atualizar para >= 11.0.25
+# Suprimir nao e corrigir: a vulnerabilidade continua na imagem.
+ignore:
+  - package:
+      name: xstream
+      version: 1.4.5
+  - package:
+      name: tomcat-embed-core
+      version: 11.0.24

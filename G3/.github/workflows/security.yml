@@ -1,0 +1,63 @@
+name: Seguranca - Grupo 3
+
+on:
+  push:
+  workflow_dispatch:
+
+# ============================================================
+#  CHAVE DA DEMONSTRACAO: troque o valor e faca push
+#    vulneravel: analisa k8s/ e NAO aplica excecoes  => VERMELHO
+#    corrigido:  analisa k8s-corrigido/ + excecoes   => VERDE
+# ============================================================
+env:
+  MODO: vulneravel
+
+jobs:
+  grype:
+    name: SCA - Syft + Grype
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Mostrar modo da demonstracao
+        run: echo "MODO = $MODO"
+
+      - name: Instalar Syft e Grype
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh | sh -s -- -b /usr/local/bin
+          curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sh -s -- -b /usr/local/bin
+
+      - name: Gerar SBOM (Syft)
+        run: syft webgoat/webgoat -o cyclonedx-json=sbom.json
+
+      - name: Grype - falha se tiver HIGH ou CRITICAL
+        run: |
+          if [ "$MODO" = "corrigido" ]; then
+            echo "Aplicando excecoes documentadas (grype-excecoes.yaml)"
+            grype sbom:sbom.json --fail-on high --config grype-excecoes.yaml
+          else
+            echo "Sem excecoes: mostrando tudo"
+            grype sbom:sbom.json --fail-on high
+          fi
+
+  kubescape:
+    name: IaC - Kubescape
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Instalar Kubescape
+        run: curl -s https://raw.githubusercontent.com/kubescape/kubescape/master/install.sh | /bin/bash
+
+      - name: Versao do Kubescape
+        run: $HOME/.kubescape/bin/kubescape version
+
+      - name: Kubescape (framework NSA) - falha se tiver HIGH ou CRITICAL
+        run: |
+          if [ "$MODO" = "corrigido" ]; then
+            PASTA=k8s-corrigido/
+          else
+            PASTA=k8s/
+          fi
+          echo "Analisando a pasta: $PASTA"
+          $HOME/.kubescape/bin/kubescape scan framework nsa $PASTA --severity-threshold high
