@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BugCollection sequence='0' release='' analysisTimestamp='1790462960456' version='4.8.6' timestamp='1790462813188'><Project projectName='app-vulneravel'><Jar>/app/target/classes</Jar><Plugin id='com.h3xstream.findsecbugs' enabled='true'></Plugin><SrcDir>/app/src/main/java</SrcDir><SrcDir>/app/target/generated-sources/annotations</SrcDir><WrkDir>/app/target</WrkDir></Project><BugInstance instanceOccurrenceNum='0' instanceHash='f6c8d84a4cc8b40374656b15f60b894c' cweid='78' rank='12' abbrev='SECCI' category='SECURITY' priority='2' type='COMMAND_INJECTION' instanceOccurrenceMax='0'><ShortMessage>Potential Command Injection</ShortMessage><LongMessage>This usage of java/lang/Runtime.exec(Ljava/lang/String;)Ljava/lang/Process; can be vulnerable to Command Injection</LongMessage><Class classname='br.edu.grupo3.Vulneravel' primary='true'><SourceLine classname='br.edu.grupo3.Vulneravel' start='10' end='29' sourcepath='br/edu/grupo3/Vulneravel.java' sourcefile='Vulneravel.java'><Message>At Vulneravel.java:[lines 10-29]</Message></SourceLine><Message>In class br.edu.grupo3.Vulneravel</Message></Class><Method isStatic='false' classname='br.edu.grupo3.Vulneravel' signature='(Ljava/lang/String;)V' name='ping' primary='true'><SourceLine endBytecode='69' classname='br.edu.grupo3.Vulneravel' start='21' end='22' sourcepath='br/edu/grupo3/Vulneravel.java' sourcefile='Vulneravel.java' startBytecode='0'></SourceLine><Message>In method br.edu.grupo3.Vulneravel.ping(String)</Message></Method><SourceLine endBytecode='9' classname='br.edu.grupo3.Vulneravel' start='21' end='21' sourcepath='br/edu/grupo3/Vulneravel.java' sourcefile='Vulneravel.java' startBytecode='9' primary='true'><Message>At Vulneravel.java:[line 21]</Message></SourceLine><String role='Sink method' value='java/lang/Runtime.exec(Ljava/lang/String;)Ljava/lang/Process;'><Message>Sink method java/lang/Runtime.exec(Ljava/lang/String;)Ljava/lang/Process;</Message></String><String role='Sink parameter' value='0'><Message>Sink parameter 0</Message></String></BugInstance><BugInstance instanceOccurrenceNum='0' instanceHash='8506d1401ac680b37a6bd8f9f65942e1' cweid='259' rank='7' abbrev='Dm' category='SECURITY' priority='2' type='DMI_CONSTANT_DB_PASSWORD' instanceOccurrenceMax='0'><ShortMessage>Hardcoded constant database password</ShortMessage><LongMessage>Hardcoded constant database password in br.edu.grupo3.Vulneravel.buscarUsuario(String)</LongMessage><Class classname='br.edu.grupo3.Vulneravel' primary='true'><SourceLine classname='br.edu.grupo3.Vulneravel' start='10' end='29' sourcepath='br/edu/grupo3/Vulneravel.java' sourcefile='Vulneravel.java'><Message>At Vulneravel.java:[lines 10-29]</Message></SourceLine><Message>In class br.edu.grupo3.Vulneravel</Message></Class><Method isStatic='false' classname='br.edu.grupo3.Vulneravel' signature='(Ljava/lang/String;)Ljava/sql/ResultSet;' name='buscarUsuario' primary='true'><SourceLine endBytecode='12' classname='br.edu.grupo3.Vulneravel' start='15' end='17' sourcepath='br/edu/grupo3/Vulneravel.java' sourcefile='Vulneravel.java' startBytecode='0'></SourceLine><Message>In method br.edu.grupo3.Vulneravel.buscarUsuario(String)</Message></Method><SourceLine endBytecode='6' classname='br.edu.grupo3.Vulneravel' start='15' end='15' sourcepath='br/edu/grupo3/Vulneravel.java' sourcefile='Vulneravel.java' startBytecode='6' primary='true'><Message>At Vulneravel.java:[line 15]</Message></SourceLine></BugInstance><BugInstance instanceOccurrenceNum='0' instanceHash='4047e6b5c0395f88205f17d2e7d02919' cweid='440' rank='14' abbrev='DMI' category='BAD_PRACTICE' priority='1' type='DMI_RANDOM_USED_ONLY_ONCE' instanceOccurrenceMax='0'><ShortMessage>Random object created and used only once</ShortMessage><LongMessage>Random object created and used only once in br.edu.grupo3.Vulneravel.gerarToken()</LongMessage><Class classname='br.edu.grupo3.Vulneravel' primary='true'><SourceLine classname='br.edu.grupo3.Vulneravel' start='10' end='29' sourcepath='br/edu/grupo3/Vulneravel.java' sourcefile='Vulneravel.java'><Message>At Vulneravel.java:[lines 10-29]</Message></SourceLine><Message>In class br.edu.grupo3.Vulneravel</Message></Class><Method isStatic='false' classname='br.edu.grupo3.Vulneravel' signature='()I' name='gerarToken' primary='true'><SourceLine endBytecode='52' classname='br.edu.grupo3.Vulneravel' start='29' end='29' sourcepath='br/edu/grupo3/Vulneravel.java' sourcefile='Vulneravel.java' startBytecode='0'></SourceLine><Message>In method br.edu.grupo3.Vulneravel.gerarToken()</Message></Method><Method isStatic='false' role='METHOD_CALLED' classname='java.util.Random' signature='()I' name='nextInt' classAnnotationNames='jdk.internal.util.random.RandomSupport$RandomGeneratorProperties'><SourceLine endBytecode='48' classname='java.util.Random' start='260' end='260' sourcepath='java/util/Random.java' sourcefile='Random.java' startBytecode='0'></SourceLine><Message>Called method java.util.Random.nextInt()</Message></Method><SourceLine endBytecode='7' classname='br.edu.grupo3.Vulneravel' start='29' end='29' sourcepath='br/edu/grupo3/Vulneravel.java' sourcefile='Vulneravel.java' startBytecode='7' primary='true'><Message>At Vulneravel.java:[line 29]</Message></SourceLine></BugInstance><BugInstance instanceOccurrenceNum='0' instanceHash='1454feb1be08baa86f755d4a672e0571' rank='19' abbrev='Dm' category='I18N' priority='1' type='DM_DEFAULT_ENCODING' instanceOccurrenceMax='0'><ShortMessage>Reliance on default encoding</ShortMessage><LongMessage>Found reliance on default encoding in br.edu.grupo3.Vulneravel.hashSenha(String): String.getBytes()</LongMessage><Class classname='br.edu.grupo3.Vulneravel' primary='true'><SourceLine classname='br.edu.grupo3.Vulneravel' start='10' end='29' sourcepath='br/edu/grupo3/Vulneravel.java' sourcefile='Vulneravel.java'><Message>At Vulneravel.java:[lines 10-29]</Message></SourceLine><Message>In class br.edu.grupo3.Vulneravel</Message></Class><Method isStatic='false' classname='br.edu.grupo3.Vulneravel' signature='(Ljava/lang/String;)[B' name='hashSenha' primary='true'><SourceLine endBytecode='64' classname='br.edu.grupo3.Vulneravel' start='25' end='25' sourcepath='br/edu/grupo3/Vulneravel.java' sourcefile='Vulneravel.java' startBytecode='0'></SourceLine><Message>In method br.edu.grupo3.Vulneravel.hashSenha(String)</Message></Method><Method isStatic='false' role='METHOD_CALLED' classname='java.lang.String' signature='()[B' name='getBytes'><SourceLine endBytecode='56' classname='java.lang.String' start='1805' end='1805' sourcepath='java/lang/String.java' sourcefile='String.java' startBytecode='0'></SourceLine><Message>Called method String.getBytes()</Message></Method><SourceLine endBytecode='6' classname='br.edu.grupo3.Vulneravel' start='25' end='25' sourcepath='br/edu/grupo3/Vulneravel.java' sourcefile='Vulneravel.java' startBytecode='6' primary='true'><Message>At Vulneravel.java:[line 25]</Message></SourceLine></BugInstance><BugInstance instanceOccurrenceNum='0' instanceHash='80a64a6eb961d2220e4b163045933b64' cweid='259' rank='10' abbrev='SECHCP' category='SECURITY' priority='1' type='HARD_CODE_PASSWORD' instanceOccurrenceMax='0'><ShortMessage>Hard coded password</ShortMessage><LongMessage>Hard coded password found</LongMessage><Class classname='br.edu.grupo3.Vulneravel' primary='true'><SourceLine classname='br.edu.grupo3.Vulneravel' start='10' end='29' sourcepath='br/edu/grupo3/Vulneravel.java' sourcefile='Vulneravel.java'><Message>At Vulneravel.java:[lines 10-29]</Message></SourceLine><Message>In class br.edu.grupo3.Vulneravel</Message></Class><Method isStatic='false' classname='br.edu.grupo3.Vulneravel' signature='(Ljava/lang/String;)Ljava/sql/ResultSet;' name='buscarUsuario' primary='true'><SourceLine endBytecode='109' classname='br.edu.grupo3.Vulneravel' start='15' end='17' sourcepath='br/edu/grupo3/Vulneravel.java' sourcefile='Vulneravel.java' startBytecode='0'></SourceLine><Message>In method br.edu.grupo3.Vulneravel.buscarUsuario(String)</Message></Method><SourceLine endBytecode='6' classname='br.edu.grupo3.Vulneravel' start='15' end='15' sourcepath='br/edu/grupo3/Vulneravel.java' sourcefile='Vulneravel.java' startBytecode='6' primary='true'><Message>At Vulneravel.java:[line 15]</Message></SourceLine><Method isStatic='true' role='METHOD_CALLED' classname='java.sql.DriverManager' signature='(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;' name='getConnection'><SourceLine endBytecode='147' classname='java.sql.DriverManager' start='220' end='229' sourcepath='java/sql/DriverManager.java' sourcefile='DriverManager.java' startBytecode='0'></SourceLine><Message>Called method java.sql.DriverManager.getConnection(String, String, String)</Message></Method><Int role='Hard coded parameter number (in reverse order) is' value='1'><Message>Hard coded parameter number (in reverse order) is 1</Message></Int><String value='admin123'><Message>Value admin123</Message></String></BugInstance><BugInstance instanceOccurrenceNum='0' instanceHash='611b75ea0c36803c2126b2786e83e86c' rank='20' abbrev='OBL' category='EXPERIMENTAL' priority='2' type='OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE' instanceOccurrenceMax='0'><ShortMessage>Method may fail to clean up stream or resource on checked exception</ShortMessage><LongMessage>br.edu.grupo3.Vulneravel.buscarUsuario(String) may fail to clean up java.sql.Statement on checked exception</LongMessage><Class classname='br.edu.grupo3.Vulneravel' primary='true'><SourceLine classname='br.edu.grupo3.Vulneravel' start='10' end='29' sourcepath='br/edu/grupo3/Vulneravel.java' sourcefile='Vulneravel.java'><Message>At Vulneravel.java:[lines 10-29]</Message></SourceLine><Message>In class br.edu.grupo3.Vulneravel</Message></Class><Method isStatic='false' classname='br.edu.grupo3.Vulneravel' signature='(Ljava/lang/String;)Ljava/sql/ResultSet;' name='buscarUsuario' primary='true'><SourceLine endBytecode='109' classname='br.edu.grupo3.Vulneravel' start='15' end='17' sourcepath='br/edu/grupo3/Vulneravel.java' sourcefile='Vulneravel.java' startBytecode='0'></SourceLine><Message>In method br.edu.grupo3.Vulneravel.buscarUsuario(String)</Message></Method><Class role='CLASS_REFTYPE' classname='java.sql.Statement'><SourceLine classname='java.sql.Statement' start='1096' end='1647' sourcepath='java/sql/Statement.java' sourcefile='Statement.java'><Message>At Statement.java:[lines 1096-1647]</Message></SourceLine><Message>Reference type java.sql.Statement</Message></Class><Int role='INT_OBLIGATIONS_REMAINING' value='1'><Message>1 instances of obligation remaining</Message></Int><SourceLine role='SOURCE_LINE_OBLIGATION_CREATED' endBytecode='11' classname='br.edu.grupo3.Vulneravel' start='16' end='16' sourcepath='br/edu/grupo3/Vulneravel.java' sourcefile='Vulneravel.java' startBytecode='11' primary='true'><Message>Obligation to clean up resource created at Vulneravel.java:[line 16] is not discharged</Message></SourceLine><SourceLine role='SOURCE_LINE_PATH_CONTINUES' endBytecode='17' classname='br.edu.grupo3.Vulneravel' start='17' end='17' sourcepath='br/edu/grupo3/Vulneravel.java' sourcefile='Vulneravel.java' startBytecode='17'><Message>Path continues at Vulneravel.java:[line 17]</Message></SourceLine><String role='STRING_REMAINING_OBLIGATIONS' value='{Statement x 1}'><Message>Remaining obligations: {Statement x 1}</Message></String></BugInstance><BugInstance instanceOccurrenceNum='0' instanceHash='6907b31aeaff7e7b8e228a567b49bb28' rank='16' abbrev='ODR' category='BAD_PRACTICE' priority='2' type='ODR_OPEN_DATABASE_RESOURCE' instanceOccurrenceMax='0'><ShortMessage>Method may fail to close database resource</ShortMessage><LongMessage>br.edu.grupo3.Vulneravel.buscarUsuario(String) may fail to close Connection</LongMessage><Class classname='br.edu.grupo3.Vulneravel' primary='true'><SourceLine classname='br.edu.grupo3.Vulneravel' start='10' end='29' sourcepath='br/edu/grupo3/Vulneravel.java' sourcefile='Vulneravel.java'><Message>At Vulneravel.java:[lines 10-29]</Message></SourceLine><Message>In class br.edu.grupo3.Vulneravel</Message></Class><Method isStatic='false' classname='br.edu.grupo3.Vulneravel' signature='(Ljava/lang/String;)Ljava/sql/ResultSet;' name='buscarUsuario' primary='true'><SourceLine endBytecode='12' classname='br.edu.grupo3.Vulneravel' start='15' end='17' sourcepath='br/edu/grupo3/Vulneravel.java' sourcefile='Vulneravel.java' startBytecode='0'></SourceLine><Message>In method br.edu.grupo3.Vulneravel.buscarUsuario(String)</Message></Method><Type role='TYPE_CLOSEIT' descriptor='Ljava/sql/Connection;'><SourceLine classname='java.sql.Connection' start='1549' end='1714' sourcepath='java/sql/Connection.java' sourcefile='Connection.java'><Message>At Connection.java:[lines 1549-1714]</Message></SourceLine><Message>Need to close java.sql.Connection </Message></Type><SourceLine endBytecode='6' classname='br.edu.grupo3.Vulneravel' start='15' end='15' sourcepath='br/edu/grupo3/Vulneravel.java' sourcefile='Vulneravel.java' startBytecode='6' primary='true'><Message>At Vulneravel.java:[line 15]</Message></SourceLine></BugInstance><BugInstance instanceOccurrenceNum='0' instanceHash='a71b56042847e72acda7575d7e79c9ce' rank='16' abbrev='ODR' category='BAD_PRACTICE' priority='2' type='ODR_OPEN_DATABASE_RESOURCE' instanceOccurrenceMax='0'><ShortMessage>Method may fail to close database resource</ShortMessage><LongMessage>br.edu.grupo3.Vulneravel.buscarUsuario(String) may fail to close Statement</LongMessage><Class classname='br.edu.grupo3.Vulneravel' primary='true'><SourceLine classname='br.edu.grupo3.Vulneravel' start='10' end='29' sourcepath='br/edu/grupo3/Vulneravel.java' sourcefile='Vulneravel.java'><Message>At Vulneravel.java:[lines 10-29]</Message></SourceLine><Message>In class br.edu.grupo3.Vulneravel</Message></Class><Method isStatic='false' classname='br.edu.grupo3.Vulneravel' signature='(Ljava/lang/String;)Ljava/sql/ResultSet;' name='buscarUsuario' primary='true'><SourceLine endBytecode='12' classname='br.edu.grupo3.Vulneravel' start='15' end='17' sourcepath='br/edu/grupo3/Vulneravel.java' sourcefile='Vulneravel.java' startBytecode='0'></SourceLine><Message>In method br.edu.grupo3.Vulneravel.buscarUsuario(String)</Message></Method><Type role='TYPE_CLOSEIT' descriptor='Ljava/sql/Statement;'><SourceLine classname='java.sql.Statement' start='1096' end='1647' sourcepath='java/sql/Statement.java' sourcefile='Statement.java'><Message>At Statement.java:[lines 1096-1647]</Message></SourceLine><Message>Need to close java.sql.Statement </Message></Type><SourceLine endBytecode='11' classname='br.edu.grupo3.Vulneravel' start='16' end='16' sourcepath='br/edu/grupo3/Vulneravel.java' sourcefile='Vulneravel.java' startBytecode='11' primary='true'><Message>At Vulneravel.java:[line 16]</Message></SourceLine></BugInstance><BugInstance instanceOccurrenceNum='0' instanceHash='9c6a3efeb8541f5ab7b6607caa70dd5d' cweid='330' rank='12' abbrev='SECPR' category='SECURITY' priority='2' type='PREDICTABLE_RANDOM' instanceOccurrenceMax='0'><ShortMessage>Predictable pseudorandom number generator</ShortMessage><LongMessage>This random generator (java.util.Random) is predictable</LongMessage><Class classname='br.edu.grupo3.Vulneravel' primary='true'><SourceLine classname='br.edu.grupo3.Vulneravel' start='10' end='29' sourcepath='br/edu/grupo3/Vulneravel.java' sourcefile='Vulneravel.java'><Message>At Vulneravel.java:[lines 10-29]</Message></SourceLine><Message>In class br.edu.grupo3.Vulneravel</Message></Class><Method isStatic='false' classname='br.edu.grupo3.Vulneravel' signature='()I' name='gerarToken' primary='true'><SourceLine endBytecode='52' classname='br.edu.grupo3.Vulneravel' start='29' end='29' sourcepath='br/edu/grupo3/Vulneravel.java' sourcefile='Vulneravel.java' startBytecode='0'></SourceLine><Message>In method br.edu.grupo3.Vulneravel.gerarToken()</Message></Method><SourceLine endBytecode='4' classname='br.edu.grupo3.Vulneravel' start='29' end='29' sourcepath='br/edu/grupo3/Vulneravel.java' sourcefile='Vulneravel.java' startBytecode='4' primary='true'><Message>At Vulneravel.java:[line 29]</Message></SourceLine><String value='java.util.Random'><Message>Value java.util.Random</Message></String></BugInstance><BugInstance instanceOccurrenceNum='0' instanceHash='e8c40a3ffc4ffd98216d7c778c0efa54' cweid='89' rank='12' abbrev='SECSQLIJDBC' category='SECURITY' priority='2' type='SQL_INJECTION_JDBC' instanceOccurrenceMax='0'><ShortMessage>Potential JDBC Injection</ShortMessage><LongMessage>This use of java/sql/Statement.executeQuery(Ljava/lang/String;)Ljava/sql/ResultSet; can be vulnerable to SQL injection (with JDBC)</LongMessage><Class classname='br.edu.grupo3.Vulneravel' primary='true'><SourceLine classname='br.edu.grupo3.Vulneravel' start='10' end='29' sourcepath='br/edu/grupo3/Vulneravel.java' sourcefile='Vulneravel.java'><Message>At Vulneravel.java:[lines 10-29]</Message></SourceLine><Message>In class br.edu.grupo3.Vulneravel</Message></Class><Method isStatic='false' classname='br.edu.grupo3.Vulneravel' signature='(Ljava/lang/String;)Ljava/sql/ResultSet;' name='buscarUsuario' primary='true'><SourceLine endBytecode='109' classname='br.edu.grupo3.Vulneravel' start='15' end='17' sourcepath='br/edu/grupo3/Vulneravel.java' sourcefile='Vulneravel.java' startBytecode='0'></SourceLine><Message>In method br.edu.grupo3.Vulneravel.buscarUsuario(String)</Message></Method><SourceLine endBytecode='24' classname='br.edu.grupo3.Vulneravel' start='17' end='17' sourcepath='br/edu/grupo3/Vulneravel.java' sourcefile='Vulneravel.java' startBytecode='24' primary='true'><Message>At Vulneravel.java:[line 17]</Message></SourceLine><String role='Sink method' value='java/sql/Statement.executeQuery(Ljava/lang/String;)Ljava/sql/ResultSet;'><Message>Sink method java/sql/Statement.executeQuery(Ljava/lang/String;)Ljava/sql/ResultSet;</Message></String><String role='Sink parameter' value='0'><Message>Sink parameter 0</Message></String></BugInstance><BugInstance instanceOccurrenceNum='0' instanceHash='a4ca1385b7108d0fc672913524e83aa8' cweid='89' rank='10' abbrev='SQL' category='SECURITY' priority='1' type='SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE' instanceOccurrenceMax='0'><ShortMessage>Nonconstant string passed to execute or addBatch method on an SQL statement</ShortMessage><LongMessage>br.edu.grupo3.Vulneravel.buscarUsuario(String) passes a nonconstant String to an execute or addBatch method on an SQL statement</LongMessage><Class classname='br.edu.grupo3.Vulneravel' primary='true'><SourceLine classname='br.edu.grupo3.Vulneravel' start='10' end='29' sourcepath='br/edu/grupo3/Vulneravel.java' sourcefile='Vulneravel.java'><Message>At Vulneravel.java:[lines 10-29]</Message></SourceLine><Message>In class br.edu.grupo3.Vulneravel</Message></Class><Method isStatic='false' classname='br.edu.grupo3.Vulneravel' signature='(Ljava/lang/String;)Ljava/sql/ResultSet;' name='buscarUsuario' primary='true'><SourceLine endBytecode='12' classname='br.edu.grupo3.Vulneravel' start='15' end='17' sourcepath='br/edu/grupo3/Vulneravel.java' sourcefile='Vulneravel.java' startBytecode='0'></SourceLine><Message>In method br.edu.grupo3.Vulneravel.buscarUsuario(String)</Message></Method><SourceLine endBytecode='24' classname='br.edu.grupo3.Vulneravel' start='17' end='17' sourcepath='br/edu/grupo3/Vulneravel.java' sourcefile='Vulneravel.java' startBytecode='24' primary='true'><Message>At Vulneravel.java:[line 17]</Message></SourceLine></BugInstance><BugInstance instanceOccurrenceNum='0' instanceHash='427c94e04fd4c1b7d2cd931581942325' cweid='328' rank='10' abbrev='SECMD5' category='SECURITY' priority='1' type='WEAK_MESSAGE_DIGEST_MD5' instanceOccurrenceMax='0'><ShortMessage>MD2, MD4 and MD5 are weak hash functions</ShortMessage><LongMessage>This API MD5 (MDX) is not a recommended cryptographic hash function</LongMessage><Class classname='br.edu.grupo3.Vulneravel' primary='true'><SourceLine classname='br.edu.grupo3.Vulneravel' start='10' end='29' sourcepath='br/edu/grupo3/Vulneravel.java' sourcefile='Vulneravel.java'><Message>At Vulneravel.java:[lines 10-29]</Message></SourceLine><Message>In class br.edu.grupo3.Vulneravel</Message></Class><Method isStatic='false' classname='br.edu.grupo3.Vulneravel' signature='(Ljava/lang/String;)[B' name='hashSenha' primary='true'><SourceLine endBytecode='64' classname='br.edu.grupo3.Vulneravel' start='25' end='25' sourcepath='br/edu/grupo3/Vulneravel.java' sourcefile='Vulneravel.java' startBytecode='0'></SourceLine><Message>In method br.edu.grupo3.Vulneravel.hashSenha(String)</Message></Method><SourceLine endBytecode='2' classname='br.edu.grupo3.Vulneravel' start='25' end='25' sourcepath='br/edu/grupo3/Vulneravel.java' sourcefile='Vulneravel.java' startBytecode='2' primary='true'><Message>At Vulneravel.java:[line 25]</Message></SourceLine><String value='MD5'><Message>Value MD5</Message></String></BugInstance><BugCategory category='BAD_PRACTICE'><Description>Bad practice</Description></BugCategory><BugCategory category='SECURITY'><Description>Security</Description></BugCategory><BugCategory category='EXPERIMENTAL'><Description>Experimental</Description></BugCategory><BugCategory category='I18N'><Description>Internationalization</Description></BugCategory><BugPattern cweid='89' abbrev='SECSQLIJDBC' category='SECURITY' type='SQL_INJECTION_JDBC'><ShortDescription>Potential JDBC Injection</ShortDescription><Details>
+            
+&lt;p&gt;
+The input values included in SQL queries need to be passed in safely.
+Bind variables in prepared statements can be used to easily mitigate the risk of SQL injection.
+&lt;/p&gt;
+
+&lt;p&gt;
+    &lt;b&gt;Vulnerable Code:&lt;/b&gt;&lt;br/&gt;
+    &lt;pre&gt;Connection conn = [...];
+Statement stmt = con.createStatement();
+ResultSet rs = stmt.executeQuery("update COFFEES set SALES = "+nbSales+" where COF_NAME = '"+coffeeName+"'");&lt;/pre&gt;
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;b&gt;Solution:&lt;/b&gt;&lt;br/&gt;
+    &lt;pre&gt;Connection conn = [...];
+conn.prepareStatement("update COFFEES set SALES = ? where COF_NAME = ?");
+updateSales.setInt(1, nbSales);
+updateSales.setString(2, coffeeName);&lt;/pre&gt;
+&lt;/p&gt;
+&lt;br/&gt;
+
+&lt;b&gt;References (JDBC)&lt;/b&gt;&lt;br/&gt;
+&lt;a href="https://docs.oracle.com/javase/tutorial/jdbc/basics/prepared.html"&gt;Oracle Documentation: The Java Tutorials &amp;gt; Prepared Statements&lt;/a&gt;&lt;br/&gt;
+&lt;b&gt;References (SQL injection)&lt;/b&gt;&lt;br/&gt;
+&lt;a href="http://projects.webappsec.org/w/page/13246963/SQL%20Injection"&gt;WASC-19: SQL Injection&lt;/a&gt;&lt;br/&gt;
+&lt;a href="https://capec.mitre.org/data/definitions/66.html"&gt;CAPEC-66: SQL Injection&lt;/a&gt;&lt;br/&gt;
+&lt;a href="https://cwe.mitre.org/data/definitions/89.html"&gt;CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')&lt;/a&gt;&lt;br/&gt;
+&lt;a href="https://www.owasp.org/index.php/Top_10_2013-A1-Injection"&gt;OWASP: Top 10 2013-A1-Injection&lt;/a&gt;&lt;br/&gt;
+&lt;a href="https://www.owasp.org/index.php/SQL_Injection_Prevention_Cheat_Sheet"&gt;OWASP: SQL Injection Prevention Cheat Sheet&lt;/a&gt;&lt;br/&gt;
+&lt;a href="https://www.owasp.org/index.php/Query_Parameterization_Cheat_Sheet"&gt;OWASP: Query Parameterization Cheat Sheet&lt;/a&gt;&lt;br/&gt;
+&lt;/p&gt;
+
+        </Details></BugPattern><BugPattern cweid='259' abbrev='Dm' category='SECURITY' type='DMI_CONSTANT_DB_PASSWORD'><ShortDescription>Hardcoded constant database password</ShortDescription><Details>
+      
+    &lt;p&gt;This code creates a database connect using a hardcoded, constant password. Anyone with access to either the source code or the compiled code can
+    easily learn the password.
+&lt;/p&gt;
+
+
+    </Details></BugPattern><BugPattern abbrev='DMI' category='BAD_PRACTICE' type='DMI_RANDOM_USED_ONLY_ONCE'><ShortDescription>Random object created and used only once</ShortDescription><Details>
+
+&lt;p&gt; This code creates a java.util.Random object, uses it to generate one random number, and then discards
+the Random object. This produces mediocre quality random numbers and is inefficient.
+If possible, rewrite the code so that the Random object is created once and saved, and each time a new random number
+is required invoke a method on the existing Random object to obtain it.
+&lt;/p&gt;
+
+&lt;p&gt;If it is important that the generated Random numbers not be guessable, you &lt;em&gt;must&lt;/em&gt; not create a new Random for each random
+number; the values are too easily guessable. You should strongly consider using a java.security.SecureRandom instead
+(and avoid allocating a new SecureRandom for each random number needed).
+&lt;/p&gt;
+
+    </Details></BugPattern><BugPattern abbrev='ODR' category='BAD_PRACTICE' type='ODR_OPEN_DATABASE_RESOURCE'><ShortDescription>Method may fail to close database resource</ShortDescription><Details>
+
+&lt;p&gt; The method creates a database resource (such as a database connection
+or row set), does not assign it to any
+fields, pass it to other methods, or return it, and does not appear to close
+the object on all paths out of the method.&amp;nbsp; Failure to
+close database resources on all paths out of a method may
+result in poor performance, and could cause the application to
+have problems communicating with the database.
+&lt;/p&gt;
+
+    </Details></BugPattern><BugPattern cweid='89' abbrev='SQL' category='SECURITY' type='SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE'><ShortDescription>Nonconstant string passed to execute or addBatch method on an SQL statement</ShortDescription><Details>
+
+  &lt;p&gt;The method invokes the execute or addBatch method on an SQL statement with a String that seems
+to be dynamically generated. Consider using
+a prepared statement instead. It is more efficient and less vulnerable to
+SQL injection attacks.
+&lt;/p&gt;
+
+    </Details></BugPattern><BugPattern cweid='78' abbrev='SECCI' category='SECURITY' type='COMMAND_INJECTION'><ShortDescription>Potential Command Injection</ShortDescription><Details>
+            
+&lt;p&gt;The highlighted API is used to execute a system command. If unfiltered input is passed to this API, it can lead to arbitrary command execution.&lt;/p&gt;
+&lt;br/&gt;
+&lt;p&gt;
+    &lt;b&gt;Vulnerable Code:&lt;/b&gt;&lt;br/&gt;
+&lt;pre&gt;import java.lang.Runtime;
+
+Runtime r = Runtime.getRuntime();
+r.exec("/bin/sh -c some_tool" + input);&lt;/pre&gt;
+&lt;/p&gt;
+&lt;p&gt;
+&lt;b&gt;References&lt;/b&gt;&lt;br/&gt;
+&lt;a href="https://www.owasp.org/index.php/Command_Injection"&gt;OWASP: Command Injection&lt;/a&gt;&lt;br/&gt;
+&lt;a href="https://www.owasp.org/index.php/Top_10_2013-A1-Injection"&gt;OWASP: Top 10 2013-A1-Injection&lt;/a&gt;&lt;br/&gt;
+&lt;a href="https://cwe.mitre.org/data/definitions/78.html"&gt;CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')&lt;/a&gt;
+&lt;/p&gt;
+
+        </Details></BugPattern><BugPattern cweid='328' abbrev='SECMD5' category='SECURITY' type='WEAK_MESSAGE_DIGEST_MD5'><ShortDescription>MD2, MD4 and MD5 are weak hash functions</ShortDescription><Details>
+            
+&lt;p&gt;The algorithms MD2, MD4 and MD5 are not a recommended MessageDigest. &lt;b&gt;PBKDF2&lt;/b&gt; should be used to hash password for example.&lt;/p&gt;
+
+&lt;blockquote&gt;
+    "The security of the MD5 hash function is severely compromised. A collision attack exists that can find collisions
+    within seconds on a computer with a 2.6 GHz Pentium 4 processor (complexity of 2&lt;sup&gt;24.1&lt;/sup&gt;).[1] Further, there is also a
+    chosen-prefix collision attack that can produce a collision for two inputs with specified prefixes within hours, using
+    off-the-shelf computing hardware (complexity 2&lt;sup&gt;39&lt;/sup&gt;).[2]"&lt;br/&gt;
+    - &lt;a href="https://en.wikipedia.org/wiki/MD5#Security"&gt;Wikipedia: MD5 - Security&lt;/a&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+    "&lt;b&gt;SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224, and SHA-512/256&lt;/b&gt;:&lt;br/&gt;
+    The use of these hash functions is acceptable for all hash function applications."&lt;br/&gt;
+    - &lt;a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf"&gt;NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths p.15&lt;/a&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+    "The main idea of a PBKDF is to slow dictionary or brute force attacks on the passwords by increasing the time
+    needed to test each password. An attacker with a list of likely passwords can evaluate the PBKDF using the known
+    iteration counter and the salt. Since an attacker has to spend a significant amount of computing time for each try,
+    it becomes harder to apply the dictionary or brute force attacks."&lt;br/&gt;
+- &lt;a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf"&gt;NIST: Recommendation for Password-Based Key Derivation  p.12&lt;/a&gt;
+&lt;/blockquote&gt;
+&lt;br/&gt;
+&lt;p&gt;
+    &lt;b&gt;Vulnerable Code:&lt;/b&gt;&lt;br/&gt;
+    &lt;pre&gt;MessageDigest md5Digest = MessageDigest.getInstance("MD5");
+    md5Digest.update(password.getBytes());
+    byte[] hashValue = md5Digest.digest();&lt;/pre&gt;
+    &lt;br/&gt;
+    &lt;pre&gt;byte[] hashValue = DigestUtils.getMd5Digest().digest(password.getBytes());&lt;/pre&gt;
+&lt;/p&gt;
+&lt;br/&gt;
+&lt;p&gt;
+    &lt;b&gt;Solution (Using bouncy castle):&lt;/b&gt;&lt;br/&gt;
+    &lt;pre&gt;public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    PKCS5S2ParametersGenerator gen = new PKCS5S2ParametersGenerator(new SHA256Digest());
+    gen.init(password.getBytes("UTF-8"), salt.getBytes(), 4096);
+    return ((KeyParameter) gen.generateDerivedParameters(256)).getKey();
+}&lt;/pre&gt;
+    &lt;br/&gt;
+    &lt;b&gt;Solution (Java 8 and later):&lt;/b&gt;&lt;br/&gt;
+    &lt;pre&gt;public static byte[] getEncryptedPassword(String password, byte[] salt) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, 4096, 256 * 8);
+    SecretKeyFactory f = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
+    return f.generateSecret(spec).getEncoded();
+}&lt;/pre&gt;
+&lt;/p&gt;
+&lt;br/&gt;
+&lt;p&gt;
+&lt;b&gt;References&lt;/b&gt;&lt;br/&gt;
+[1] &lt;a href="https://www.win.tue.nl/hashclash/On%20Collisions%20for%20MD5%20-%20M.M.J.%20Stevens.pdf"&gt;On Collisions for MD5&lt;/a&gt;: Master Thesis by M.M.J. Stevens&lt;br/&gt;
+[2] &lt;a href="https://homepages.cwi.nl/~stevens/papers/stJOC%20-%20Chosen-Prefix%20Collisions%20for%20MD5%20and%20Applications.pdf"&gt;Chosen-prefix collisions for MD5 and applications&lt;/a&gt;: Paper written by Marc Stevens&lt;br/&gt;
+&lt;a href="https://en.wikipedia.org/wiki/MD5"&gt;Wikipedia: MD5&lt;/a&gt;&lt;br/&gt;
+&lt;a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar2.pdf"&gt;NIST: Transitioning the Use of Cryptographic Algorithms and Key Lengths&lt;/a&gt;&lt;br/&gt;
+&lt;a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf"&gt;NIST: Recommendation for Password-Based Key Derivation&lt;/a&gt;&lt;br/&gt;
+&lt;a href="https://stackoverflow.com/q/22580853/89769"&gt;Stackoverflow: Reliable implementation of PBKDF2-HMAC-SHA256 for Java&lt;/a&gt;&lt;br/&gt;
+&lt;a href="https://cwe.mitre.org/data/definitions/327.html"&gt;CWE-327: Use of a Broken or Risky Cryptographic Algorithm&lt;/a&gt;
+&lt;/p&gt;
+
+        </Details></BugPattern><BugPattern abbrev='Dm' category='I18N' type='DM_DEFAULT_ENCODING'><ShortDescription>Reliance on default encoding</ShortDescription><Details>
+
+&lt;p&gt; Found a call to a method which will perform a byte to String (or String to byte) conversion,
+and will assume that the default platform encoding is suitable. This will cause the application
+behavior to vary between platforms. Use an alternative API and specify a charset name or Charset
+object explicitly.&lt;/p&gt;
+
+      </Details></BugPattern><BugPattern cweid='330' abbrev='SECPR' category='SECURITY' type='PREDICTABLE_RANDOM'><ShortDescription>Predictable pseudorandom number generator</ShortDescription><Details>
+            
+&lt;p&gt;The use of a predictable random value can lead to vulnerabilities when used in certain security critical contexts. For example, when the value is used as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;a CSRF token: a predictable token can lead to a CSRF attack as an attacker will know the value of the token&lt;/li&gt;
+&lt;li&gt;a password reset token (sent by email): a predictable password token can lead to an account takeover, since an attacker will guess the URL of the "change password" form&lt;/li&gt;
+&lt;li&gt;any other secret value&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+A quick fix could be to replace the use of &lt;code&gt;java.util.Random&lt;/code&gt; with something stronger, such as &lt;code&gt;java.security.SecureRandom&lt;/code&gt;.
+&lt;/p&gt;
+&lt;p&gt;
+&lt;b&gt;Vulnerable Code:&lt;/b&gt;&lt;br/&gt;
+&lt;pre&gt;String generateSecretToken() {
+    Random r = new Random();
+    return Long.toHexString(r.nextLong());
+}&lt;/pre&gt;
+&lt;/p&gt;
+&lt;p&gt;
+&lt;b&gt;Solution:&lt;/b&gt;
+&lt;pre&gt;import org.apache.commons.codec.binary.Hex;
+
+String generateSecretToken() {
+    SecureRandom secRandom = new SecureRandom();
+
+    byte[] result = new byte[32];
+    secRandom.nextBytes(result);
+    return Hex.encodeHexString(result);
+}&lt;/pre&gt;
+&lt;/p&gt;
+&lt;br/&gt;
+&lt;p&gt;
+&lt;b&gt;References&lt;/b&gt;&lt;br/&gt;
+&lt;a href="https://jazzy.id.au/2010/09/20/cracking_random_number_generators_part_1.html"&gt;Cracking Random Number Generators - Part 1 (https://jazzy.id.au)&lt;/a&gt;&lt;br/&gt;
+&lt;a href="https://www.securecoding.cert.org/confluence/display/java/MSC02-J.+Generate+strong+random+numbers"&gt;CERT: MSC02-J. Generate strong random numbers&lt;/a&gt;&lt;br/&gt;
+&lt;a href="https://cwe.mitre.org/data/definitions/330.html"&gt;CWE-330: Use of Insufficiently Random Values&lt;/a&gt;&lt;br/&gt;
+&lt;a href="https://blog.h3xstream.com/2014/12/predicting-struts-csrf-token-cve-2014.html"&gt;Predicting Struts CSRF Token (Example of real-life vulnerability and exploitation)&lt;/a&gt;
+&lt;/p&gt;
+
+        </Details></BugPattern><BugPattern cweid='259' abbrev='SECHCP' category='SECURITY' type='HARD_CODE_PASSWORD'><ShortDescription>Hard coded password</ShortDescription><Details>
+            
+&lt;p&gt;
+Passwords should not be kept in the source code. The source code can be widely shared in an enterprise environment, and is
+certainly shared in open source. To be managed safely, passwords and secret keys should be stored in separate configuration files or keystores.
+(Hard coded keys are reported separately by &lt;i&gt;Hard Coded Key&lt;/i&gt; pattern)
+&lt;/p&gt;
+&lt;p&gt;
+&lt;p&gt;&lt;b&gt;Vulnerable Code:&lt;/b&gt;&lt;br/&gt;
+
+&lt;pre&gt;private String SECRET_PASSWORD = "letMeIn!";
+
+Properties props = new Properties();
+props.put(Context.SECURITY_CREDENTIALS, "p@ssw0rd");&lt;/pre&gt;
+&lt;/p&gt;
+&lt;br/&gt;
+&lt;p&gt;
+&lt;b&gt;References&lt;/b&gt;&lt;br/&gt;
+&lt;a href="https://cwe.mitre.org/data/definitions/259.html"&gt;CWE-259: Use of Hard-coded Password&lt;/a&gt;
+&lt;/p&gt;
+
+        </Details></BugPattern><BugPattern abbrev='OBL' category='EXPERIMENTAL' type='OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE'><ShortDescription>Method may fail to clean up stream or resource on checked exception</ShortDescription><Details>
+          
+          &lt;p&gt;
+          This method may fail to clean up (close, dispose of) a stream,
+          database object, or other
+          resource requiring an explicit cleanup operation.
+          &lt;/p&gt;
+
+          &lt;p&gt;
+          In general, if a method opens a stream or other resource,
+          the method should use a try/finally block to ensure that
+          the stream or resource is cleaned up before the method
+          returns.
+          &lt;/p&gt;
+
+          &lt;p&gt;
+          This bug pattern is essentially the same as the
+          OS_OPEN_STREAM and ODR_OPEN_DATABASE_RESOURCE
+          bug patterns, but is based on a different
+          (and hopefully better) static analysis technique.
+          We are interested is getting feedback about the
+          usefulness of this bug pattern.
+          For sending feedback, check:
+          &lt;/p&gt;
+          &lt;ul&gt;
+            &lt;li&gt;&lt;a href="https://github.com/spotbugs/spotbugs/blob/master/.github/CONTRIBUTING.md"&gt;contributing guideline&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="https://github.com/spotbugs/discuss/issues?q="&gt;mailinglist&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+
+          &lt;p&gt;
+          In particular,
+          the false-positive suppression heuristics for this
+          bug pattern have not been extensively tuned, so
+          reports about false positives are helpful to us.
+          &lt;/p&gt;
+
+          &lt;p&gt;
+          See Weimer and Necula, &lt;i&gt;Finding and Preventing Run-Time Error Handling Mistakes&lt;/i&gt;
+          (&lt;a href="https://people.eecs.berkeley.edu/~necula/Papers/rte_oopsla04.pdf"&gt;PDF&lt;/a&gt;),
+          for a description of the analysis technique.
+          &lt;/p&gt;
+          
+      </Details></BugPattern><BugCode cweid='440' abbrev='DMI'><Description>Dubious method invocation</Description></BugCode><BugCode abbrev='SECPR'><Description>Predictable Pseudo Random Generator</Description></BugCode><BugCode abbrev='SECMD5'><Description>MD2, MD4 and MD5 are weak hash functions</Description></BugCode><BugCode abbrev='SECCI'><Description>Command Injection</Description></BugCode><BugCode abbrev='OBL'><Description>Unsatisfied obligation to clean up stream or resource</Description></BugCode><BugCode abbrev='Dm'><Description>Dubious method used</Description></BugCode><BugCode abbrev='SECHCP'><Description>Hard coded password</Description></BugCode><BugCode abbrev='SECSQLIJDBC'><Description>SQL Injection (JDBC)</Description></BugCode><BugCode abbrev='ODR'><Description>Database resource not closed on all paths</Description></BugCode><BugCode abbrev='SQL'><Description>Potential SQL Problem</Description></BugCode><Errors missingClasses='1' errors='0'><MissingClass>makeConcatWithConstants</MissingClass></Errors><FindBugsSummary num_packages='1' total_classes='1' priority_1='5' priority_2='7' total_size='15' clock_seconds='1.63' referenced_classes='27' vm_version='17.0.20.1+1' total_bugs='12' java_version='17.0.20.1' gc_seconds='0.00' alloc_mbytes='512.00' cpu_seconds='7.99' peak_mbytes='201.21' timestamp='Sat, 26 Sep 2026 22:46:53 +0000'><FileStats path='br/edu/grupo3/Vulneravel.java' size='15' bugHash='f9a9b0386af06b8dcd7f34b4975b3286' bugCount='12'></FileStats><PackageStats package='br.edu.grupo3' priority_1='5' total_bugs='12' priority_2='7' total_size='15' total_types='1'><ClassStats bugs='12' size='15' priority_1='5' priority_2='7' interface='false' sourceFile='Vulneravel.java' class='br.edu.grupo3.Vulneravel'></ClassStats></PackageStats><FindBugsProfile><ClassProfile avgMicrosecondsPerInvocation='992' totalMilliseconds='493' name='edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine' maxMicrosecondsPerInvocation='8702' standardDeviationMicrosecondsPerInvocation='748' invocations='497'></ClassProfile><ClassProfile avgMicrosecondsPerInvocation='380' totalMilliseconds='188' name='edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine' maxMicrosecondsPerInvocation='8303' standardDeviationMicrosecondsPerInvocation='796' invocations='495'></ClassProfile><ClassProfile avgMicrosecondsPerInvocation='1786' totalMilliseconds='48' name='edu.umd.cs.findbugs.detect.FieldItemSummary' maxMicrosecondsPerInvocation='7287' standardDeviationMicrosecondsPerInvocation='2248' invocations='27'></ClassProfile><ClassProfile avgMicrosecondsPerInvocation='286' totalMilliseconds='31' name='edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory' maxMicrosecondsPerInvocation='2846' standardDeviationMicrosecondsPerInvocation='424' invocations='111'></ClassProfile><ClassProfile avgMicrosecondsPerInvocation='994' totalMilliseconds='26' name='edu.umd.cs.findbugs.detect.FindNoSideEffectMethods' maxMicrosecondsPerInvocation='5823' standardDeviationMicrosecondsPerInvocation='1380' invocations='27'></ClassProfile><ClassProfile avgMicrosecondsPerInvocation='368' totalMilliseconds='25' name='edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine' maxMicrosecondsPerInvocation='7774' standardDeviationMicrosecondsPerInvocation='1004' invocations='69'></ClassProfile></FindBugsProfile></FindBugsSummary><ClassFeatures></ClassFeatures><History></History></BugCollection>
