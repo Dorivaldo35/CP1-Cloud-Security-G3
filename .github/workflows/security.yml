@@ -10,7 +10,7 @@ on:
 #    corrigido:  analisa k8s-corrigido/ + excecoes   => VERDE
 # ============================================================
 env:
-  MODO: vulneravel
+  MODO: corrigido
 
 defaults:
   run:
