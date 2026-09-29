@@ -1,6 +1,6 @@
-# 🧪 LAB - Grupo 3: Supply chain, SBOM e Kubernetes
+# LAB - Grupo 3: Supply chain, SBOM e Kubernetes
 
-## 🎯 O que vamos fazer
+## O que vamos fazer
 
 Uma aplicação moderna **não é feita só do código da empresa**: ela carrega
 centenas de peças de terceiros (bibliotecas, pacotes do sistema) e roda em
@@ -23,17 +23,17 @@ Neste lab você vai usar 3 ferramentas para encontrar esses problemas
 
 **Tempo:** ~12 minutos
 
-> ⚠️ Use as ferramentas **somente** contra os alvos deste repositório.
+> Use as ferramentas **somente** contra os alvos deste repositório.
 > Analisar sistemas de terceiros sem autorização é crime.
 
 ---
 
-## 📋 Pré-requisitos
+## Pré-requisitos
 - **Docker Desktop** instalado e **aberto**
 - **Git** instalado
 - Um terminal (no Windows: Git Bash, PowerShell ou o terminal do VS Code)
 
-> 💡 **Para ganhar tempo**, rode antes da aula (baixa as ferramentas):
+> **Para ganhar tempo**, rode antes da aula (baixa as ferramentas):
 > ```
 > docker pull anchore/syft
 > docker pull anchore/grype
@@ -49,7 +49,7 @@ Neste lab você vai usar 3 ferramentas para encontrar esses problemas
 git clone https://github.com/Dorivaldo35/CP1-Cloud-Security-G3.git
 cd CP1-Cloud-Security-G3/G3
 ```
-📁 **O que tem aqui:**
+**O que tem aqui:**
 | Arquivo / pasta | Para que serve |
 |---|---|
 | `docker-compose.yml` | Liga cada ferramenta com um comando, sem instalar nada |
@@ -71,10 +71,10 @@ tem dentro dela.
 - `java-archive` = bibliotecas Java usadas pelo WebGoat
 - `deb` = pacotes do sistema operacional (Ubuntu) da imagem
 
-👉 **Procure a linha `xstream 1.4.5`.** Guarde esse nome.
+**Procure a linha `xstream 1.4.5`.** Guarde esse nome.
 
 ### Passo 3 - Procurar vulnerabilidades com o Grype (3 min)
-> ⚠️ Rode o **Passo 2 antes**: o Grype lê o SBOM (`relatorios/sbom.json`) gerado pelo Syft.
+> Rode o **Passo 2 antes**: o Grype lê o SBOM (`relatorios/sbom.json`) gerado pelo Syft.
 
 ```
 docker compose run --rm grype
@@ -94,7 +94,7 @@ e uma tabela.
 | `EPSS` | Chance de a falha ser explorada nos próximos 30 dias |
 | `KEV` | A falha já está sendo explorada por atacantes no mundo real |
 
-👉 Olha lá o `xstream 1.4.5` no topo, com EPSS de ~98% e marcado como KEV.
+Olha lá o `xstream 1.4.5` no topo, com EPSS de ~98% e marcado como KEV.
 
 ### Passo 4 - Analisar o Kubernetes com o Kubescape (2 min)
 Primeiro, **abra** o arquivo `k8s/deployment-inseguro.yaml` e veja:
@@ -142,7 +142,7 @@ env:
 - O Grype aplica o `grype-excecoes.yaml`, com as **exceções documentadas**
 - **Resultado:** ✅ os dois jobs ficam **verdes**
 
-> ⚠️ **Atenção à diferença:**
+> **Atenção à diferença:**
 > - O Kubescape ficou verde porque o YAML foi **CORRIGIDO**.
 > - O Grype ficou verde porque o risco foi **ACEITO e DOCUMENTADO**: as bibliotecas
 >   vulneráveis pertencem ao WebGoat (vulnerável de propósito), e não ao nosso código.
@@ -151,26 +151,7 @@ env:
 >
 > **Suprimir não é corrigir.**
 
-👉 Veja o histórico na aba **Actions** do repositório: os builds vermelhos e verdes.
+Veja o histórico na aba **Actions** do repositório: os builds vermelhos e verdes.
 
-> 💡 **Quer testar você mesmo?** Faça um *fork* do repositório, troque o `MODO`,
+> **Quer testar você mesmo?** Faça um *fork* do repositório, troque o `MODO`,
 > faça commit e veja o resultado na aba Actions do seu fork.
-
----
-
-## ❓ Perguntas de verificação
-Entregue as respostas com o **print** do seu terminal:
-
-1. No **Passo 3**, quantas vulnerabilidades **CRITICAL** o Grype encontrou?
-   Cite **uma** biblioteca afetada e a versão que corrige (coluna `FIXED IN`).
-2. No **Passo 4**, cite **um controle que falhou** no Kubescape e **qual linha**
-   do `k8s/deployment-inseguro.yaml` causou essa falha.
-
----
-
-## 🆘 Deu erro?
-| Problema | Solução |
-|---|---|
-| `Cannot connect to the Docker daemon` | Abra o Docker Desktop e espere ficar pronto |
-| `no configuration file provided` | Você não está na pasta do repositório: rode `cd CP1-Cloud-Security-G3/G3` |
-| Download muito lento | Acompanhe pelo **vídeo backup** (link no README) |
